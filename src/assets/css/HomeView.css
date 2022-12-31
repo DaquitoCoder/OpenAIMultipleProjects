@@ -1,0 +1,39 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sandbox-title {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  text-align: center;
+}
+
+.sandbox-about {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  text-align: center;
+}
+
+.sandbox-about-text {
+  font-size: var(--font-size-base);
+  text-align: center;
+  min-width: 300px;
+  margin: 0 1rem;
+  width: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .home .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .home .btn-group .btn {
+    border-radius: 1rem !important;
+  }
+}
