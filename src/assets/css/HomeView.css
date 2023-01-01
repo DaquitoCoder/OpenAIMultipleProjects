@@ -21,9 +21,9 @@
 .sandbox-about-text {
   font-size: var(--font-size-base);
   text-align: center;
-  min-width: 300px;
+  max-width: 500px;
   margin: 0 1rem;
-  width: 500px;
+  /* width: 300px; */
 }
 
 @media screen and (max-width: 768px) {

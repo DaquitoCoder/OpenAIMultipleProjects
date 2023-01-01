@@ -1,7 +1,42 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import IdeaList from '../components/IdeaList';
+import Loading from '../components/Loading';
 
 function Ideas() {
+  const [idea, setIdea] = useState();
+  const [loading, setLoading] = useState(true);
+  const [searching, setSearching] = useState(false);
+
+  const apiUrl = import.meta.env.VITE_API_URI;
+  const fetchIdea = async () => {
+    const response = await fetch(`${apiUrl}/critic/`, options)
+      .then((response) => response.json())
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+    setIdea(response);
+  };
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+    body: '{"prompt": "' + document.getElementById('idea-search')?.value + '"}',
+  };
+
+  const searchIdea = () => {
+    try {
+      setSearching(true);
+      fetchIdea();
+      setLoading(false);
+      setSearching(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className='ideas'>
       <h1 className='ideas-title'>Ideas Consultant</h1>
@@ -13,46 +48,22 @@ function Ideas() {
             placeholder="What's your idea?"
             aria-label="What's your idea?"
             aria-describedby='button-addon2'
+            id='idea-search'
           />
-          <button className='btn btn-primary' type='button' id='button-addon2'>
+          <button
+            className='btn btn-primary'
+            type='button'
+            id='button-search-idea'
+            onClick={() => {
+              searchIdea();
+            }}
+          >
             Search
           </button>
         </div>
       </div>
-      <div className='idea-list'>
-        <div className='idea-pros subtitle'>
-          Advantages: <p className='idea-text'></p>
-        </div>
-        <div className='idea-cons subtitle'>
-          Disadvantages: <p className='idea-text'></p>
-        </div>
-        <div className='idea-state-of-art subtitle'>
-          State of the art: <p className='idea-text'></p>
-        </div>
-        <div className='idea-pitch subtitle'>
-          Pitch: <p className='idea-text'></p>
-        </div>
-        <div className='idea-plan subtitle'>
-          Plan:
-          <p className='idea-text'></p>
-        </div>
-        <div className='idea-survey subtitle'>
-          Questions about the idea:
-          <p className='idea-text'></p>
-        </div>
-        <div className='idea-viability subtitle'>
-          Viability
-          <p className='idea-bar'></p>
-        </div>
-        <div className='idea-innovation subtitle'>
-          innovation
-          <p className='idea-bar'></p>
-        </div>
-        <div className='idea-resources subtitle'>
-          Resources
-          <p className='idea-bar'></p>
-        </div>
-      </div>
+      {searching && loading ? <Loading /> : null}
+      {idea ? <IdeaList results={idea} /> : null}
     </div>
   );
 }

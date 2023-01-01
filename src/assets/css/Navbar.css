@@ -1,8 +1,14 @@
+.navbar {
+  background-color: #003F6A;
+}
+
 .navbar .container-fluid {
   justify-content: center;
 }
 
 .navbar .navbar-brand {
   margin: 0;
+  color: white;
   font-size: var(--font-size-xl);
 }
+
