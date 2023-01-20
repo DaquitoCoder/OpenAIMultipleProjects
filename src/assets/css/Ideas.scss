@@ -1,15 +1,17 @@
+@use 'utils/variables' as v;
+
 .ideas-title {
-  font-size: var(--font-size-lg);
+  font-size: v.$font-size-lg;
   text-align: center;
   margin-bottom: 1rem;
   font-weight: 700;
-  color: black;
+  color: white;
 }
 
 .subtitle {
-  font-size: var(--font-size-md);
+  font-size: v.$font-size-md;
   margin: 0 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .container-ideas{
@@ -34,13 +36,13 @@
   justify-content: center;
   border-radius: 1rem;
   padding: 2rem 1rem;
-  background-color: var(--color-primary);
+  background-color: v.$color-primary;
   color: white;
   max-width: 1000px;
 }
 
 .idea-text {
-  font-size: var(--font-size-base);
+  font-size: v.$font-size-base;
   margin: 1rem;
   font-weight: 300;
 }

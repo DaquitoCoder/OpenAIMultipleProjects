@@ -14,7 +14,7 @@ function HomeView() {
             <Link to='/ideas'>Idea Consultant</Link>
           </button>
           <button type='button' className='btn btn-primary'>
-            <Link to='/copy-writing'>Copy Writing</Link>
+            <Link to='/copywriting'>Copy Writing</Link>
           </button>
           <button type='button' className='btn btn-primary'>
             <Link to='/resume'>Making a resume</Link>

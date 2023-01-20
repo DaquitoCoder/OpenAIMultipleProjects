@@ -30,3 +30,17 @@ export const critic = async (prompt) => {
   const response = await sendRequest(url, data);
   return response;
 };
+
+export const copyWritter = async (name, description, targetAudience, keySelling, desiredTone)  => {
+  const url = `${apiUrl}/copy/`;
+  const data = { 
+    name,
+    description,
+    "target_audience": targetAudience,
+    "key_selling_points": keySelling,
+    "desired_tone": desiredTone
+   };
+  const response = await sendRequest(url, data);
+  return response;
+}
+

@@ -1,5 +1,7 @@
+@use 'utils/variables' as v;
+
 .navbar {
-  background-color: #003F6A;
+  background-color: v.$color-primary;
 }
 
 .navbar .container-fluid {
@@ -9,6 +11,7 @@
 .navbar .navbar-brand {
   margin: 0;
   color: white;
-  font-size: var(--font-size-xl);
+  font-size: v.$font-size-lg;
+  font-weight: 700;
 }
 
