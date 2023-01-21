@@ -1,0 +1,17 @@
+@use 'utils/variables' as v;
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: v.$color-primary;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.resume-about{
+  font-size: v.$font-size-lg;
+  font-weight: 500;
+}

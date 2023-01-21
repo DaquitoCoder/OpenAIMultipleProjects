@@ -10,14 +10,38 @@ function IdeaList({ results }) {
   const plan = results.plan.split('\n');
   const survey = results.survey.split('\n');
 
+  const ideas = [
+    {
+      idea: 'Advantages',
+      results: pros,
+    },
+    {
+      idea: 'Disadvantages',
+      results: cons,
+    },
+    {
+      idea: 'State of the art',
+      results: stateOfArt,
+    },
+    {
+      idea: 'Pitch',
+      results: pitch,
+    },
+    {
+      idea: 'Plan for the idea',
+      results: plan,
+    },
+    {
+      idea: 'Questions about the idea',
+      results: survey,
+    }
+  ]
+
   return (
     <div className='idea-list'>
-      <Idea results={pros} idea='Advantages' />
-      <Idea results={cons} idea='Disadvantages' />
-      <Idea results={stateOfArt} idea='State of the art' />
-      <Idea results={pitch} idea='Pitch' />
-      <Idea results={plan} idea='Plan for the idea' />
-      <Idea results={survey} idea='Questions about the idea' />
+      {ideas.map((idea, index) => (
+        <Idea key={index} idea={idea.idea} results={idea.results} />
+      ))}
       <div className='row'>
         <div className='col-4'>
           <div className='idea-viability subtitle chart'>

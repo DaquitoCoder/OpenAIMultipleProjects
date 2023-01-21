@@ -6,6 +6,7 @@ import HomeView from './views/HomeView';
 import Ideas from './views/Ideas';
 import Container from './components/Container';
 import CopyWriting from './views/CopyWriting';
+import Resume from './views/Resume';
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
             <Route path='/' element={<HomeView />} />
             <Route path='/ideas' element={<Ideas />} />
             <Route path='/copywriting' element={<CopyWriting />} />
-            <Route path='*' element={<h1>404 Not Found</h1>} />
+            <Route path='/resume' element={<Resume />} />
+            <Route path='*' element={<h1 className='sandbox-about text-white'>404 Not Found</h1>} />
           </Routes>
         </Container>
         <Footer />

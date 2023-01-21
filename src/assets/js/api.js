@@ -44,3 +44,23 @@ export const copyWritter = async (name, description, targetAudience, keySelling,
   return response;
 }
 
+export const resume = async (description) => {
+  const url = `${apiUrl}/resume/`;
+  const data = { description };
+  const response = await sendRequest(url, data);
+  return response;
+}
+
+export const script = async (prompt, media) => {
+  const url = `${apiUrl}/script/`;
+  const data = { prompt, media };
+  const response = await sendRequest(url, data);
+  return response;
+}
+
+export const sentimentAnalysis = async (prompt) => {
+  const url = `${apiUrl}/sentiment/`;
+  const data = { prompt };
+  const response = await sendRequest(url, data);
+  return response;
+}
