@@ -1,27 +1,51 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import HomeView from './views/HomeView';
 import Ideas from './views/Ideas';
-import Container from './components/Container';
 import CopyWriting from './views/CopyWriting';
 import Resume from './views/Resume';
+import EscapeGame from './views/EscapeGame';
+
+const routes = [
+  {
+    path: '/',
+    element: <HomeView />,
+  },
+  {
+    path: '/escape-game',
+    element: <EscapeGame />,
+  },
+  {
+    path: '/ideas',
+    element: <Ideas />,
+  },
+  {
+    path: '/copywriting',
+    element: <CopyWriting />,
+  },
+  {
+    path: '/resume',
+    element: <Resume />,
+  },
+  {
+    path: '*',
+    element: <h1 className='sandbox-about text-white'>404 Not Found</h1>,
+  },
+];
 
 function App() {
   return (
     <div className='App'>
       <Router>
         <Navbar />
-        <Container>
+        <div className='container-fluid'>
           <Routes>
-            <Route path='/' element={<HomeView />} />
-            <Route path='/ideas' element={<Ideas />} />
-            <Route path='/copywriting' element={<CopyWriting />} />
-            <Route path='/resume' element={<Resume />} />
-            <Route path='*' element={<h1 className='sandbox-about text-white'>404 Not Found</h1>} />
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
           </Routes>
-        </Container>
+        </div>
         <Footer />
       </Router>
     </div>

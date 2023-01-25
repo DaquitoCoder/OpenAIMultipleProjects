@@ -2,6 +2,7 @@ import React from 'react';
 
 function CopyWritingResults({ results }) {
   const copyText = results?.copy_text.split('\n');
+  console.log(copyText);
   return (
     <div className='copywriting-results'>
       <h1 className='copywriting-results-title'>Copywriting Results</h1>

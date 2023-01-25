@@ -6,15 +6,29 @@
 @use 'Gauge';
 @use 'Copywriting';
 @use 'Resume';
+@use 'EscapeGame';
 @use 'utils/variables' as v;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 * {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
+  scrollbar-width: auto;
+  scrollbar-color: #212529 #6b6b6b;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #6b6b6b;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #212529;
+  border: 1px solid #4e4e4e;
 }
 
 body {
@@ -27,22 +41,4 @@ body {
   flex-direction: column;
   gap: 1rem;
   color: white;
-}
-
-.gradient-background {
-  background: linear-gradient(45deg,#000000,#3e3e3e);
-  background-size: 120% 120%;
-  animation: gradient-animation 12s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }

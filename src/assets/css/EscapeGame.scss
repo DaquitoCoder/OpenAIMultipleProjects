@@ -1,0 +1,115 @@
+@use 'utils/variables' as v;
+
+.escape-game-about {
+  background-color: v.$color-primary;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.escape-game-title {
+  font-size: v.$font-size-lg;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.escape-game-description {
+}
+
+.chat {
+  border: 1px solid black;
+  padding: 0;
+  font-family: 'VT323', monospace;
+}
+
+.card-header {
+  font-size: v.$font-size-md;
+  border-bottom: 1px solid black;
+}
+
+.card-body {
+  font-size: v.$font-size-base;
+}
+
+.card-footer {
+  font-size: v.$font-size-base;
+  border-top: 1px solid black;
+}
+
+.card-section {
+  display: flex;
+  font-family: 'VT323', monospace;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-card .message {
+  font-size: v.$font-size-base;
+  color: green;
+  background-color: #f5f6f7;
+}
+
+.message-narrator img,
+.message-player img {
+  width: 45px;
+  height: 100%;
+  background-position: cover;
+}
+
+.message::before {
+  content: '> ';
+}
+
+@media screen and (min-width: 768px) {
+  .escape-game-about {
+    width: 75ch;
+  }
+
+  .chat {
+    width: 650px;
+  }
+}
+
+// Loading Message
+
+.spinner {
+  --clr: green;
+  --gap: 6px;
+  /* gap between each circle */
+  width: 80px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.spinner span {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: var(--clr);
+  opacity: 0;
+}
+
+.spinner span:nth-child(1) {
+  animation: fade 1s ease-in-out infinite;
+}
+
+.spinner span:nth-child(2) {
+  animation: fade 1s ease-in-out 0.33s infinite;
+}
+
+.spinner span:nth-child(3) {
+  animation: fade 1s ease-in-out 0.66s infinite;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+}

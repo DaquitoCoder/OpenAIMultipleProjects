@@ -5,13 +5,67 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  background-color: v.$color-primary;
-  padding: 1rem;
-  border-radius: 1rem;
 }
 
-.resume-about{
+.resume-about {
+  background-color: v.$color-primary;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.resume-about-title {
   font-size: v.$font-size-lg;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.resume-about-text {
+  font-size: v.$font-size-base;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+
+.resume-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.resume-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.resume-form-title {
+  font-size: v.$font-size-md;
+  font-weight: 600;
+}
+
+#textAreaDescription {
+  height: 100px;
+  width: calc(100vw - 3.5rem);
+  // resize: horizontal;
+  max-width: 1000px;
+}
+
+.form-label {
+  color: v.$color-secondary;
+}
+
+@media screen and (min-width: 769px) {
+  .resume-about {
+    width: 75ch;
+  }
+  #textAreaDescription {
+    width: calc(75ch - 2rem);
+  }
+
 }

@@ -2,15 +2,15 @@ import React from 'react';
 import Gauge from './Gauge';
 import Idea from './Idea';
 
-function IdeaList({ results }) {
-  const pros = results.pros.split('\n').filter((pro) => pro !== '');
-  const cons = results.cons.split('\n');
-  const stateOfArt = results.state_of_the_art.split('\n');
-  const pitch = results.pitch.split('\n');
-  const plan = results.plan.split('\n');
-  const survey = results.survey.split('\n');
+function IdeaList({ ideas }) {
+  const pros = ideas?.pros?.split('\n').filter((pro) => pro !== '');
+  const cons = ideas?.cons?.split('\n');
+  const stateOfArt = ideas?.state_of_the_art?.split('\n');
+  const pitch = ideas?.pitch?.split('\n');
+  const plan = ideas?.plan?.split('\n');
+  const survey = ideas?.survey?.split('\n');
 
-  const ideas = [
+  const ideasMap = [
     {
       idea: 'Advantages',
       results: pros,
@@ -39,7 +39,7 @@ function IdeaList({ results }) {
 
   return (
     <div className='idea-list'>
-      {ideas.map((idea, index) => (
+      {ideasMap.map((idea, index) => (
         <Idea key={index} idea={idea.idea} results={idea.results} />
       ))}
       <div className='row'>
@@ -47,7 +47,7 @@ function IdeaList({ results }) {
           <div className='idea-viability subtitle chart'>
             Viability
             <div className='idea-bar'>
-              <Gauge id='gauge-chart1' value={results?.viability} />
+              <Gauge id='gauge-chart1' value={ideas?.viability} />
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ function IdeaList({ results }) {
           <div className='idea-innovation subtitle chart'>
             Innovation
             <div className='idea-bar'>
-              <Gauge id='gauge-chart1' value={results?.innovation} />
+              <Gauge id='gauge-chart1' value={ideas?.innovation} />
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ function IdeaList({ results }) {
           <div className='idea-resources subtitle chart'>
             Resources
             <div className='idea-bar'>
-              <Gauge id='gauge-chart1' value={results?.resources} />
+              <Gauge id='gauge-chart1' value={ideas?.resources} />
             </div>
           </div>
         </div>
