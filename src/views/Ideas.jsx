@@ -18,7 +18,6 @@ function Ideas() {
   };
 
   let resultsSection = '';
-
   if (loading) {
     resultsSection = <Loading />;
   } else if (results?.status === 404) {

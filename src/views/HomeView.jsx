@@ -32,7 +32,7 @@ function HomeView() {
             <Link to='/resume'>Making a resume</Link>
           </button>
           <button type='button' className='btn btn-light'>
-            <Link to='/resume'>Making a script</Link>
+            <Link to='/script'>Making a script</Link>
           </button>
           <button type='button' className='btn btn-light'>
             <Link to='/sentiment-analysis'>Sentiment Analysis</Link>

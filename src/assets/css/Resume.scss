@@ -51,8 +51,8 @@
 
 #textAreaDescription {
   height: 100px;
-  width: calc(100vw - 3.5rem);
-  // resize: horizontal;
+  width: calc(100vw - 4rem);
+  resize: none;
   max-width: 1000px;
 }
 
@@ -60,12 +60,36 @@
   color: v.$color-secondary;
 }
 
-@media screen and (min-width: 769px) {
-  .resume-about {
-    width: 75ch;
+// results in a 75ch width for the text area
+
+.resume-results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.resume-results-title{
+  font-size: v.$font-size-md;
+  font-weight: 600;
+}
+
+.resume-results-text {
+  font-size: v.$font-size-base;
+  font-weight: 200;
+}
+
+
+@media screen and (min-width: 768px) {
+  .resume-about, .resume-results {
+    width: 80ch;
   }
   #textAreaDescription {
-    width: calc(75ch - 2rem);
+    width: calc(80ch - 2rem);
   }
 
 }
