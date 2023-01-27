@@ -1,0 +1,34 @@
+@use 'utils/variables.scss' as v;
+
+.scripting-description {
+  display: flex;
+  background-color: v.$color-primary;
+  padding: 1rem;
+  border-radius: 1rem;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+.scripting-form-title {
+  font-size: v.$font-size-lg;
+  text-align: center;
+  font-weight: 500;
+}
+
+.scripting-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scripting-form .form-floating {
+  margin-bottom: 1rem;
+  width: calc(100vw - 4rem);
+}
+
+@media screen and (min-width: 768px) {
+  .scripting-form .form-floating {
+    width: 72ch;
+  }
+  
+}

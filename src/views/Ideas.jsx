@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { critic } from '../js/api';
 import IdeaList from '../components/IdeaList';
-import Loading from '../components/utils/Loading';
-import Error from '../components/utils/Error';
+import AboutTool from '../components/AboutTool';
+import { LoadingData } from '../js/ModellingData';
 
 function Ideas() {
   const [idea, setIdea] = useState('');
@@ -17,19 +17,17 @@ function Ideas() {
     setLoading(false);
   };
 
-  let resultsSection = '';
-  if (loading) {
-    resultsSection = <Loading />;
-  } else if (results?.status === 404) {
-    resultsSection = <Error message={results?.body.detail} />;
-  } else if (results?.status === 200) {
-    resultsSection = <IdeaList ideas={results?.body} />;
-  }
+  let resultsSection = LoadingData(loading, results, IdeaList);
 
   return (
-    <div className='ideas'>
+    <div className='ideas gap-3'>
+      <AboutTool
+        title={'Ideas Consultant'}
+        text={
+          'This tool helps entrepreneurs and business owners analyze their product or service idea. It provides a comprehensive evaluation that includes pros and cons, state of the art, a pitch, a plan, survey questions, and viability, innovation, and resource indicators. \nThis information allows entrepreneurs to make informed decisions about whether to move forward with their idea or to make adjustments before investing time and resources. Overall, a business idea evaluation tool is a valuable tool for anyone looking to start a new business or launch a new product or service.'
+        }
+      />
       <div className='ideas-search mb-3 p-3'>
-        <h1 className='ideas-title'>Ideas Consultant</h1>
         <div className='idea-searchbar'>
           <form onSubmit={handleSubmit} className='form-search'>
             <div className='input-group'>

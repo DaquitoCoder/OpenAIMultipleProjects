@@ -1,20 +1,5 @@
 @use 'utils/variables' as v;
 
-.escape-game-about {
-  background-color: v.$color-primary;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-
-.escape-game-title {
-  font-size: v.$font-size-lg;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.escape-game-description {
-}
-
 .chat {
   border: 1px solid black;
   padding: 0;
@@ -60,12 +45,14 @@
 }
 
 @media screen and (min-width: 768px) {
-  .escape-game-about {
-    width: 75ch;
-  }
-
   .chat {
     width: 650px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .chat {
+    width: 800px;
   }
 }
 

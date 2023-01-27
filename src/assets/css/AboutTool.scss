@@ -1,0 +1,34 @@
+@use 'utils/variables' as v;
+
+.abouts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: v.$color-primary;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.abouts-title {
+  font-size: v.$font-size-lg;
+  font-weight: 500;
+  text-align: center;
+}
+
+.abouts-text {
+  font-size: v.$font-size-base;
+}
+
+@media screen and (min-width: 768px) {
+  .abouts {
+    width: 75ch;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .abouts {
+    width: 100ch;
+  }
+}

@@ -1,12 +1,14 @@
 @use 'reset';
 @use 'Navbar';
 @use 'Footer';
+@use 'AboutTool';
 @use 'HomeView';
 @use 'Ideas';
 @use 'Gauge';
 @use 'Copywriting';
 @use 'Resume';
 @use 'EscapeGame';
+@use 'Scripting';
 @use 'utils/variables' as v;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap');

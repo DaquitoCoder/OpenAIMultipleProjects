@@ -3,6 +3,8 @@ import { copyWritter } from '../js/api.js';
 import CopyWritingResults from '../components/CopyWritingResults.jsx';
 import Loading from '../components/utils/Loading.jsx';
 import Error from '../components/utils/Error.jsx';
+import AboutTool from '../components/AboutTool.jsx';
+import { LoadingData } from '../js/ModellingData.jsx';
 
 function CopyWriting() {
   const [nameProduct, setNameProduct] = useState('');
@@ -35,31 +37,21 @@ function CopyWriting() {
     getAPIresults();
   };
 
-  let resultsSection = '';
-  if (loading) {
-    resultsSection = <Loading />;
-  } else if (results?.status === 404) {
-    resultsSection = <Error message={results?.body.detail} />;
-  } else if (results?.status === 200) {
-    resultsSection = <CopyWritingResults results={results?.body} />;
-  }
+  let resultsSection = LoadingData(loading, results, CopyWritingResults);
 
   return (
-    <div className='copywriting'>
-      <div className='copywriting-about'>
-        <div className='copywriting-title'>Copy Writing</div>
-        <p className='copywriting-about-text'>
-          Introduce your product or service with a clear and compelling pitch.
-          Fill out the form with the name of your product or service, a brief
-          description, your target audience, key selling points, and your
-          desired tone. Our AI-powered tool will then craft a personalized pitch
-          for you, making it easy to effectively promote and market your
-          offering to the right people.
-        </p>
-      </div>
+    <div className='home'>
+      <AboutTool
+        title={'Copy Writing'}
+        text={
+          'Introduce your product or service with a clear and compelling pitch. Fill out the form with the name of your product or service, a brief description, your target audience, key selling points, and your desired tone. \nOur AI-powered tool will then craft a personalized pitch for you, making it easy to effectively promote and market your offering to the right people.'
+        }
+      />
 
       <form onSubmit={handleSubmit} className='copywriting-form'>
-        <div className='copywriting-form-title text-center mb-3'>Enter the information</div>
+        <div className='copywriting-form-title text-center mb-3'>
+          Enter the information
+        </div>
         <div className='row mb-2'>
           <div className='col'>
             <div className='form-group form-floating'>

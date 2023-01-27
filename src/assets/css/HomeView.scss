@@ -9,30 +9,6 @@
   color: white;
 }
 
-.sandbox-about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: v.$color-primary;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-
-.sandbox-about-title {
-  font-size: v.$font-size-lg;
-  font-weight: 500;
-  text-align: center;
-}
-
-.sandbox-about-text {
-  font-size: v.$font-size-base;
-  text-align: center;
-  max-width: 500px;
-  margin: 0 1rem;
-}
-
 .sandbox-menu {
   display: flex;
   flex-direction: column;
@@ -50,14 +26,20 @@
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
+.home .btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.home .btn-group .btn {
+  border-radius: 1rem !important;
+}
+
+@media screen and (min-width: 768px) {
   .home .btn-group {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 0.5rem;
-  }
-
-  .home .btn-group .btn {
-    border-radius: 1rem !important;
   }
 }

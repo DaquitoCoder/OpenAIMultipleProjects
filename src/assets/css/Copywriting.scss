@@ -8,23 +8,6 @@
   flex-direction: column;
 }
 
-.copywriting-title {
-  font-size: v.$font-size-lg;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.copywriting-about {
-  font-size: v.$font-size-base;
-  font-weight: 400;
-  margin-bottom: 1rem;
-  background-color: v.$color-primary;
-  line-height: 1.2rem;
-  padding: 1rem;
-  border-radius: 1rem;
-}
-
 .copywriting-form {
   background-color: v.$color-primary;
   padding: 1rem;

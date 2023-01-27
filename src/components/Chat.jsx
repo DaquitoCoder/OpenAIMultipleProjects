@@ -12,7 +12,6 @@ const Chat = () => {
   let year = currentTime.getFullYear();
   let formattedDate = day + '/' + month + '/' + year;
   let hora = hours + ':' + minutes;
-  
 
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
@@ -34,7 +33,7 @@ const Chat = () => {
     ]);
     setLoading(true);
     const response = await action(userInputValue);
-    
+
     if (response.status === 200) {
       addMessage({
         type: 'narrator',
@@ -101,7 +100,7 @@ const Chat = () => {
           </p>
         </div>
         {messages.map(renderMessage)}
-        {loading && (<LoadingMessage />)}
+        {loading && <LoadingMessage />}
       </div>
       <form onSubmit={handleSubmit}>
         <div className='card-footer text-muted d-flex justify-content-start align-items-center p-3 bg-dark'>

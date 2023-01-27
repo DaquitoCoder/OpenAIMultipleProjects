@@ -2,13 +2,13 @@ import React from 'react';
 import Gauge from './Gauge';
 import Idea from './Idea';
 
-function IdeaList({ ideas }) {
-  const pros = ideas?.pros?.split('\n').filter((pro) => pro !== '');
-  const cons = ideas?.cons?.split('\n');
-  const stateOfArt = ideas?.state_of_the_art?.split('\n');
-  const pitch = ideas?.pitch?.split('\n');
-  const plan = ideas?.plan?.split('\n');
-  const survey = ideas?.survey?.split('\n');
+function IdeaList({ body }) {
+  const pros = body?.pros?.split('\n').filter((pro) => pro !== '');
+  const cons = body?.cons?.split('\n');
+  const stateOfArt = body?.state_of_the_art?.split('\n');
+  const pitch = body?.pitch?.split('\n');
+  const plan = body?.plan?.split('\n');
+  const survey = body?.survey?.split('\n');
 
   const ideasMap = [
     {
@@ -34,8 +34,8 @@ function IdeaList({ ideas }) {
     {
       idea: 'Questions about the idea',
       results: survey,
-    }
-  ]
+    },
+  ];
 
   return (
     <div className='idea-list'>
@@ -47,7 +47,7 @@ function IdeaList({ ideas }) {
           <div className='idea-viability subtitle chart'>
             Viability
             <div className='idea-bar'>
-              <Gauge id='gauge-chart1' value={ideas?.viability} />
+              <Gauge id='gauge-chart1' value={body?.viability} />
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@ function IdeaList({ ideas }) {
           <div className='idea-innovation subtitle chart'>
             Innovation
             <div className='idea-bar'>
-              <Gauge id='gauge-chart1' value={ideas?.innovation} />
+              <Gauge id='gauge-chart1' value={body?.innovation} />
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ function IdeaList({ ideas }) {
           <div className='idea-resources subtitle chart'>
             Resources
             <div className='idea-bar'>
-              <Gauge id='gauge-chart1' value={ideas?.resources} />
+              <Gauge id='gauge-chart1' value={body?.resources} />
             </div>
           </div>
         </div>

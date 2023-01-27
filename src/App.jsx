@@ -6,6 +6,8 @@ import Ideas from './views/Ideas';
 import CopyWriting from './views/CopyWriting';
 import Resume from './views/Resume';
 import EscapeGame from './views/EscapeGame';
+import Scripting from './views/Scripting';
+import SentimentAnalyser from './views/SentimentAnalyser';
 
 const routes = [
   {
@@ -27,6 +29,14 @@ const routes = [
   {
     path: '/resume',
     element: <Resume />,
+  },
+  {
+    path: '/script',
+    element: <Scripting />,
+  },
+  {
+    path: '/sentiment-analysis',
+    element: <SentimentAnalyser />,
   },
   {
     path: '*',
